@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Alimenti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <button class="back-button">←</button>
+            <h1>Gestione Alimenti</h1>
+        </header>
+
+        <main>
+            <button id="newItemButton" class="add-button">+ Nuovo Alimento</button>
+
+            <div class="category-list" id="categoryList">
+                <!-- Le categorie verranno generate dinamicamente qui -->
+            </div>
+        </main>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2>Aggiungi Nuovo Alimento</h2>
+                <form id="newItemForm">
+                    <input type="text" id="itemName" placeholder="Nome Alimento" required>
+                    <select id="itemCategory" required>
+                        <option value="">Seleziona Categoria</option>
+                    </select>
+                    <input type="date" id="itemExpiry" required>
+                    <input type="number" id="itemPrice" step="0.01" placeholder="Prezzo" required>
+                    <button type="submit">Aggiungi</button>
+                    <button type="button" id="cancelButton">Annulla</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Food Inventory</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Il contenuto del body rimane lo stesso -->
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registrato'))
+                .catch(err => console.log('Service Worker non registrato', err));
+        }
+    </script>
+</body>
+</html>
